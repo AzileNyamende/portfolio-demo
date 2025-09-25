@@ -1,0 +1,11 @@
+{
+  "tag-pair": true,                 // All tags must be properly closed
+  "tagname-lowercase": true,        // Tag names must be lowercase
+  "attr-lowercase": true,           // Attribute names must be lowercase
+  "attr-value-double-quotes": true, // Attribute values must use double quotes
+  "doctype-first": true,            // DOCTYPE must be first in the document
+  "spec-char-escape": true,         // Special characters must be escaped
+  "id-unique": true,                // IDs must be unique
+  "head-script-disabled": true,     // No scripts inside <head>
+  "style-disabled": false           // Allow style tags
+}
