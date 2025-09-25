@@ -28,16 +28,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v3
         with:
-          persist-credentials: false  # Ensures deployment token works
-
-      # Optional: Cache npm dependencies (for future projects)
-      - name: Cache node modules
-        uses: actions/cache@v3
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-node-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-node-
+          persist-credentials: false
 
       - name: Build site (static files)
         run: |
@@ -48,6 +39,8 @@ jobs:
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+
           publish_dir: ./public
 
           github_token: ${{ secrets.GITHUB_TOKEN }}
